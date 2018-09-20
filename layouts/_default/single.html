@@ -1,0 +1,13 @@
+{{ define "page" }}
+  <article class="box card">
+      <header class="card-header">
+        <p class="card-header-title">{{ .Title }}</p>
+      </header>
+    <div class="card-content">
+      <div class="content">
+        {{ .Content }}
+      </div>
+    </div>
+    {{ partial "blog-footer.html" . }}
+  </article>
+{{ end }}

@@ -1,0 +1,16 @@
+.blog-footer {
+  border-top: silver 2px dashed;
+}
+
+.content ul li a,
+.content p a,
+.content figure figcaption a,
+.content a {
+  text-decoration: underline wavy;
+}
+
+@media (max-width: 650px) {
+  .card-content {
+    padding: 0.5rem 0;
+  }
+}

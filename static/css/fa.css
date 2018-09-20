@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  src: url("/fonts/fa-solid-900.woff2");
+}
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/fa-brands-400.woff2");
+}
+
+.fas {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 900;
+  line-height: 1;
+  text-rendering: auto;
+}
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+.fa-folder:before {
+  content: "\f07b";
+}
+.fa-folder-open:before {
+  content: "\f07c";
+}
+.fa-rss:before {
+  content: "\f09e";
+}
+.fa-copyright:before {
+  content: "\f1f9";
+}
+.fa-github:before {
+  content: "\f09b";
+}
+.fa-gitlab:before {
+  content: "\f296";
+}
+.fa-tags:before {
+  content: "\f02c";
+}
+.fa-info:before {
+  content: "\f129";
+}
+.fa-info-circle:before {
+  content: "\f05a";
+}
+.fa-mandalorian:before {
+  content: "\f50f";
+}

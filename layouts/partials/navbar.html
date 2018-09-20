@@ -1,0 +1,49 @@
+<header class="navbar">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src="/images/logo.png" alt="Logo">
+      </a>
+      <span class="navbar-burger burger" data-target="navbarMenuHeroC" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+    <div id="navbarMenuHeroC" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="/" id="home-tab">
+          Home
+        </a>
+        <a class="navbar-item" href="/blog/" id="blog-tab">
+          Blog
+        </a>
+        <a class="navbar-item" href="/projects/" id="projects-tab">
+          Projects
+        </a>
+        <span class="navbar-item">
+          <a class="button is-link is-inverted" href="{{ .Site.Params.GitHubLab }}">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+            <span>GitHub</span>
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+  <script>
+    const path = window.location.pathname.slice(0,5);
+    switch(path) {
+      case "/":
+        document.getElementById('home-tab').classList.toggle('is-active');
+        break;
+      case "/blog":
+        document.getElementById('blog-tab').classList.toggle('is-active');
+        break;
+      case "/proj":
+        document.getElementById('projects-tab').classList.toggle('is-active');
+        break;
+    }
+  </script>
+</header>

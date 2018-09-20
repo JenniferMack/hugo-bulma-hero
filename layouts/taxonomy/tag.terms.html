@@ -1,0 +1,24 @@
+{{ define "page" }}
+<h2 class="title has-text-centered">Tag Cloud</h2>
+<div class="tag-cloud">
+  {{ if not (eq (len $.Site.Taxonomies.tag) 0) }}
+  {{ $largestFontSize := 3.5 }}
+  {{ $smallestFontSize := 1 }}
+  {{ $fontSpread := sub $largestFontSize $smallestFontSize }}
+  {{ $max := add (len (index $.Site.Taxonomies.tag.ByCount 0).Pages) 1 }}
+  {{ $min := len (index $.Site.Taxonomies.tag.ByCount.Reverse 0).Pages }}
+  {{ $spread := sub $max $min }}
+  {{ $fontStep := div $fontSpread $spread }}    
+  {{ range $name, $taxonomy := $.Site.Taxonomies.tag }}
+  {{ $currentTagCount := len $taxonomy.Pages }}
+  {{ $currentFontSize := (add $smallestFontSize (mul (sub $currentTagCount $min) $fontStep) ) }}
+  {{ $count := len $taxonomy.Pages }}
+  {{ $weigth := div (sub (math.Log $count) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
+  {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth) ) }}
+  <a href="{{ "/tag/" | relLangURL }}{{ $name | urlize }}" style="font-size:{{(mul $currentFontSize 100 )}}%" class="inline">{{ $name }}</a>
+  {{ end }}
+  {{ end }}
+</div>
+{{ end }}
+
+{{ define "paginate" }}<div></div>{{ end }}

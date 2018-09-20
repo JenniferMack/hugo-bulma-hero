@@ -1,0 +1,25 @@
+{{ define "columns" }}
+<div class="container">
+  <div class="columns is-centered">
+    {{- range $idx, $elm := (.Paginator 3).Pages.ByDate.Reverse }}
+    <article class="column is-one-third">
+      <div class="box has-background-grey-light content">
+        <h5>{{ $elm.Title }}</h5>
+        <div class="has-text-centered">
+          {{ with first 1 .Params.ProjectImgs }}
+          <div class="box" style="padding:5px">
+            <img src="{{ index . 0 }}" style="height:10em">
+          </div>
+          {{ end }}
+          {{ $elm.Summary }}
+          <a href="{{ .Permalink }}">More Info</a>
+          {{- with .Params.projectURL -}}
+           | <a href="{{ . }}">Visit Site</a>
+          {{- end }}
+        </div>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

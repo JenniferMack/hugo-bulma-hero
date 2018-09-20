@@ -1,0 +1,23 @@
+<footer class="columns blog-footer">
+  <div class="column has-text-centered is-two-fifths">
+    {{ dateFormat "2006-01-02" .Date }}<br>
+    <a href="{{ .Permalink }}">permalink</a>
+  </div>
+  <div class="column">
+    <p>
+      {{ with .Params.category }}
+      <div class="is-size-7">
+        <a href="/category/"><i class="fas fa-folder-open"></i></a> <em>{{ delimit (apply . "partial" "cat-link.html" "." ) " " }}</em>
+      </div>
+      {{ end }}
+    </p>
+    <p>
+      {{ with .Params.tag }}
+      <div class="is-size-7">
+        <a href="/tag/"><i class="fas fa-tags"></i></a> <em>{{ delimit (apply . "partial" "tag-link.html" "." ) " " }}</em>
+      </div>
+      {{ end }}
+    </p>
+    </p>
+  </div>
+</footer>

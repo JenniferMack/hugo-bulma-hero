@@ -1,0 +1,18 @@
+{{ define "page" }}
+<h1 class="title has-text-centered">{{ .Data.Singular | title }}: {{ .Name }}</h1>
+{{ range .Paginator.Pages }}
+<div class="box card">
+  <a href="{{ .RelPermalink }}">
+    <header class="card-header">
+      <p class="card-header-title">{{ .Title }}</p>
+    </header>
+  </a>
+  <div class="card-content">
+    <p>
+      {{ .Summary }}
+    </p>
+  </div>
+  {{ partial "blog-footer.html" . }}
+</div>
+{{ end }}
+{{ end }}

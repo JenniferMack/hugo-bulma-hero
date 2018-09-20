@@ -1,0 +1,10 @@
+{{ define "page" }}
+<h2 class="title has-text-centered">{{ .Data.Singular | pluralize | title }}</h2>
+{{ $data := .Data }}
+{{ range $key, $value := .Data.Terms.Alphabetical }}
+    <a href="{{ $.Site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a>
+    <span class="category-item-count">
+      <sup>({{ $value.Count }})</sup>
+    </span>
+{{ end }}
+{{ end }}

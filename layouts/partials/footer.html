@@ -1,0 +1,8 @@
+<nav class="tabs is-boxed is-fullwidth">
+  <ul>
+    {{- range .Site.Params.BottomLinks -}}
+    <li><a href="/{{ .link }}/" id="{{ .link }}">{{ .name | markdownify }}</a>
+    {{- end -}}
+  </ul>
+</nav>
+

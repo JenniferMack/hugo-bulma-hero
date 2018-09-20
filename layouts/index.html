@@ -1,0 +1,22 @@
+{{ define "main" }}
+<!-- Hero content: will be in the middle -->
+<div class="hero-body">
+  <div class="container has-text-centered">
+    <h1 class="title">
+      {{ .Site.Params.HomeTitle }}
+    </h1>
+    <h2 class="subtitle">
+      {{ .Site.Params.HomeSubTitle }}
+    </h2>
+    {{ with .Site.Params.HomeBlurb }}
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <div class="section">
+          <div id="home-blurb">{{ . | markdownify }}</div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

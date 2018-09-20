@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{- partial "head.html" . -}}
+  </head>
+  <body>
+    {{- block "nav" . -}}
+    <section class="hero is-dark is-fullheight">
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head">
+        {{ partial "navbar.html" . }}
+      </div>
+      {{- end -}}
+      <div id="content">
+        {{- block "main" . }}
+        <div class="hero-body">
+          {{ block "columns" . }}
+          <div class="columns is-centered">
+            <div class="column is-two-thirds is-half-widescreen" style="padding-top:0px;">
+              {{ block "page" . }}
+              {{ end }}
+            </div>
+            <div class="column is-one-third is-one-quarter-desktop is-one-fifth-widescreen">
+              {{ block "aside" . }}
+              {{- partial "sidebar.html" . }}
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+          {{ block "paginate" . }}
+            {{ if .IsNode }}
+            <div id="paginator">
+              {{- partial "paginate.html" . }}
+            </div>
+            {{ end }}
+          {{ end }}
+        {{- end }}
+      </div><!--content-->
+      {{- block "footer" . -}}
+      <!-- Hero footer: will stick at the bottom -->
+      <div class="hero-foot">
+        {{- partial "footer.html" . -}}
+      </div>
+      {{- end -}}
+    </section>
+  </body>
+</html>
