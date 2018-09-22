@@ -1,0 +1,31 @@
+baseURL = ""
+
+title = "Bulma Hero"
+languageCode = "en-us"
+theme = "../.."
+
+[permalinks]
+  blog = "/:year/:month/:day/:slug/"
+  page = "/:slug/"
+
+[taxonomies]
+  category = "category"
+  tag = "tag"
+
+[params]
+  GitHubLab = "https://github.com/"
+
+  HomeTitle = "Bulma Hero"
+  HomeSubTitle = "A Hugo Theme"
+  HomeBlurb = "A simple theme using the Bulma CSS framework"
+
+[params.BottomLinks]
+[params.BottomLinks.link2]
+  link = "site-info"
+  name = "<i class='fas fa-copyright'></i> 2018</i>"
+[params.BottomLinks.link3]
+  link = "about"
+  name = "<i class='fab fa-mandalorian'></i> About"
+[params.BottomLinks.link1]
+  link = "index.xml"
+  name = "RSS <i class='fas fa-rss'></i>"
